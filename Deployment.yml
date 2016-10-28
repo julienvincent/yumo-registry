@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: yumo-registry
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        type: registry
+    spec:
+      containers:
+        - name: yumo-registry
+          image: keyvanfatehi/sinopia:latest
+          ports:
+            - containerPort: 4873
+              name: registry-port
+          volumeMounts:
+              - name: yumo-registry
+                mountPath: /opt
+      volumes:
+        - name: yumo-registry
+          gcePersistentDisk:
+            pdName: yumo-registry
+            fsType: ext4
