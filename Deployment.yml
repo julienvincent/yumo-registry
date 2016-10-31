@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: yumo-registry
-          image: keyvanfatehi/sinopia:latest
+          image: ${IMAGE_NAME}
           ports:
             - containerPort: 4873
               name: registry-port
