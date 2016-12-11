@@ -17,7 +17,7 @@ spec:
               name: registry-port
           volumeMounts:
               - name: yumo-registry
-                mountPath: /opt
+                mountPath: /opt/sinopia/storage
       volumes:
         - name: yumo-registry
           gcePersistentDisk:
